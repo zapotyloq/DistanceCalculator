@@ -18,6 +18,7 @@ namespace DistanceCalculator.BLL
             // Add BLL services to DI container.
             services.AddScoped<IDistanceService, DistanceService>();
             services.AddScoped<IAirportInfoProvider, AirportInfoProvider>();
+            services.AddScoped<IHttpClientWrapper, HttpClientWrapper>();
 
             return services;
         }

@@ -14,7 +14,7 @@ namespace DistanceCalculator.API.Controllers
     {
         private readonly IDistanceService distanceService;
 
-        Regex IATARegex = new Regex("[A-Z]{3}");
+        Regex IATARegex = new Regex("[A-Z]{3}$");
 
         public DistanceController(IDistanceService distanceService)
         {
@@ -25,7 +25,7 @@ namespace DistanceCalculator.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<double>> GetDistanceInMiles(string codeIATA1, string codeIATA2, CancellationToken cancelationToken)
+        public async Task<IActionResult> GetDistanceInMilesAsync(string codeIATA1, string codeIATA2, CancellationToken cancelationToken)
         {
             if (!IATARegex.IsMatch(codeIATA1))
             {
