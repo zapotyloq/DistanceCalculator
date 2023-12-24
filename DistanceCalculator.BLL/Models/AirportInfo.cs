@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DistanceCalculator.BLL.Models
+﻿namespace DistanceCalculator.BLL.Models
 {
     public class AirportInfo
     {
