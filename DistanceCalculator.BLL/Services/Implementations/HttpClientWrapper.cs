@@ -7,16 +7,16 @@ namespace DistanceCalculator.BLL.Services.Implementations
 {
     public class HttpClientWrapper : IHttpClientWrapper
     {
-        private readonly HttpClient _httpClient;
+        private readonly HttpClient httpClient;
 
         public HttpClientWrapper(HttpClient httpClient)
         {
-            _httpClient = httpClient;
+            this.httpClient = httpClient;
         }
 
         public async Task<HttpResponseMessage> GetAsync(string requestUri, CancellationToken cancellationToken)
         {
-            return await _httpClient.GetAsync(requestUri);
+            return await httpClient.GetAsync(requestUri);
         }
     }
 }

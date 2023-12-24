@@ -20,6 +20,8 @@ namespace DistanceCalculator.BLL
             services.AddScoped<IAirportInfoProvider, AirportInfoProvider>();
             services.AddScoped<IHttpClientWrapper, HttpClientWrapper>();
 
+            services.AddHttpClient<IHttpClientWrapper, HttpClientWrapper>();
+
             return services;
         }
 
