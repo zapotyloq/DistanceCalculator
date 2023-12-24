@@ -25,7 +25,7 @@ namespace DistanceCalculator.BLL.Services.Implementations
             var response = await httpClient.GetAsync(url, cancellationToken);
             if(response.StatusCode == System.Net.HttpStatusCode.NotFound)
             {
-                throw new NotFoundException($"Airport {codeIATA} is snot exists");
+                throw new NotFoundException($"Airport {codeIATA} is not exists.");
             }
             response.EnsureSuccessStatusCode();
             var content = await response.Content.ReadAsStringAsync();
